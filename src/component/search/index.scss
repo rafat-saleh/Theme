@@ -1,0 +1,138 @@
+/** @format */
+
+html,
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.main_light {
+  background-color: lightgrey;
+  margin: 16px 8px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  box-shadow: rgba(0, 0, 0, 0.117647) -7px -4px 8px,
+    rgba(0, 0, 0, 0.117647) -7px -4px 8px;
+}
+.main_dark {
+  background-color: darkgrey;
+  margin: 16px 8px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  box-shadow: gray 7px 4px 8px, gray 7px 4px 8px;
+}
+
+div#app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  .search-wrapper {
+    position: relative;
+    label {
+      position: absolute;
+      font-size: 14px;
+      color: rgba(0, 0, 0, 0.5);
+      top: 14px;
+      left: 26px;
+      display: none;
+      transition: 0.15s all ease-in-out;
+    }
+    input {
+      margin-left: 6px;
+      width: 60%;
+      padding: 4px 12px;
+      color: rgba(0, 0, 0, 0.7);
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      transition: 0.15s all ease-in-out;
+      background: light;
+      &:focus {
+        outline: none;
+        transform: scale(1.05);
+        & + label {
+          display: block;
+          text-align: center;
+          font-weight: 700;
+          transform: translateY(-30px) translateX(-12px);
+        }
+        &::-webkit-input-placeholder {
+          visibility: hidden;
+        }
+      }
+      &::-webkit-input-placeholder {
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.5);
+        font-weight: 500;
+      }
+    }
+    button {
+      font-weight: 500;
+      margin-left: 4px;
+      border: none;
+      color: rgba(0, 0, 0, 0.5);
+      background-color: lightgray;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  .search-wrapper.dark {
+    label {
+      color: rgba(0, 132, 255, 0.966);
+    }
+    input {
+      color: rgba(0, 132, 255, 0.966);
+      background-color: black;
+      &::-webkit-input-placeholder {
+        color: rgba(2, 180, 250, 0.979);
+        font-weight: 500;
+      }
+    }
+    button {
+      color: rgba(0, 132, 255, 0.966);
+      background-color: darkgrey;
+      font-weight: 700;
+    }
+  }
+  .wrapper {
+    display: flex;
+    max-width: 444px;
+    flex-wrap: wrap;
+    padding-top: 12px;
+    justify-content: center;
+  }
+
+  .card {
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px,
+      rgba(0, 0, 0, 0.117647) 0px 1px 4px;
+    max-width: 124px;
+    margin: 12px;
+    transition: 0.15s all ease-in-out;
+    &:hover {
+      transform: scale(1.1);
+    }
+    a {
+      text-decoration: none;
+      padding: 12px;
+      color: #03a9f4;
+      font-size: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      img {
+        height: 100px;
+      }
+      small {
+        font-size: 10px;
+        padding: 4px;
+      }
+    }
+  }
+  .card.card_dark {
+    background-color: rgb(58, 51, 51);
+    box-shadow: rgba(2, 180, 250, 0.979) 0px 1px 6px,
+      rgba(2, 180, 250, 0.979) 0px 1px 4px;
+  }
+}
